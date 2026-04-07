@@ -6,6 +6,7 @@ import { Sidebar } from '@/components/layout/sidebar'
 import { Header } from '@/components/layout/header'
 import { useAppStore } from '@/stores/app-store'
 import { createClient } from '@/lib/supabase/client'
+import { isDemoMode, DEMO_PROFILE, DEMO_TENANT } from '@/lib/demo/auth'
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
@@ -14,39 +15,53 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const load = async () => {
-      const supabase = createClient()
-      const { data: { user: authUser } } = await supabase.auth.getUser()
-
-      if (!authUser) {
-        router.push('/login')
+      // Demo mode — use hardcoded profile/tenant
+      if (isDemoMode()) {
+        if (!user) {
+          setUser(DEMO_PROFILE)
+          setTenant(DEMO_TENANT)
+        }
+        setReady(true)
         return
       }
 
-      // Fetch profile
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', authUser.id)
-        .single()
+      try {
+        const supabase = createClient()
+        const { data: { user: authUser } } = await supabase.auth.getUser()
 
-      if (profile) {
-        setUser(profile)
+        if (!authUser) {
+          router.push('/login')
+          return
+        }
 
-        // Fetch tenant
-        const { data: tenant } = await supabase
-          .from('tenants')
+        // Fetch profile
+        const { data: profile } = await supabase
+          .from('profiles')
           .select('*')
-          .eq('id', profile.tenant_id)
+          .eq('id', authUser.id)
           .single()
 
-        if (tenant) setTenant(tenant)
-      }
+        if (profile) {
+          setUser(profile)
 
-      setReady(true)
+          // Fetch tenant
+          const { data: tenant } = await supabase
+            .from('tenants')
+            .select('*')
+            .eq('id', profile.tenant_id)
+            .single()
+
+          if (tenant) setTenant(tenant)
+        }
+
+        setReady(true)
+      } catch {
+        router.push('/login')
+      }
     }
 
     load()
-  }, [router, setUser, setTenant])
+  }, [router, setUser, setTenant, user])
 
   if (!ready) {
     return (

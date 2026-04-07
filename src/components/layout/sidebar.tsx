@@ -6,6 +6,7 @@ import { useAppStore } from '@/stores/app-store'
 import { T } from '@/lib/i18n/translations'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
+import { isDemoMode, setDemoMode } from '@/lib/demo/auth'
 
 const NAV_ITEMS = [
   {
@@ -102,8 +103,12 @@ export function Sidebar() {
   const t = T[lang]
 
   const handleLogout = async () => {
-    const supabase = createClient()
-    await supabase.auth.signOut()
+    if (isDemoMode()) {
+      setDemoMode(false)
+    } else {
+      const supabase = createClient()
+      await supabase.auth.signOut()
+    }
     useAppStore.getState().reset()
     router.push('/login')
   }
