@@ -1,9 +1,11 @@
 import Stripe from 'stripe';
 import { authenticateApiKey } from '@/lib/api/auth';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-03-31.basil',
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2025-03-31.basil',
+  });
+}
 
 // Plan -> Stripe Price ID mapping
 const PLAN_PRICES: Record<string, string> = {
@@ -43,7 +45,7 @@ export async function POST(request: Request): Promise<Response> {
     const successUrl = body.success_url || `${baseUrl}/dashboard/billing?session_id={CHECKOUT_SESSION_ID}`;
     const cancelUrl = body.cancel_url || `${baseUrl}/dashboard/billing?canceled=true`;
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: successUrl,

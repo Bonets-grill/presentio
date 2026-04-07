@@ -1,9 +1,11 @@
 import Stripe from 'stripe';
 import { authenticateApiKey } from '@/lib/api/auth';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-03-31.basil',
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2025-03-31.basil',
+  });
+}
 
 // In-memory mapping of tenant -> Stripe customer (simulated DB)
 const tenantCustomers = new Map<string, string>();
@@ -33,7 +35,7 @@ export async function POST(request: Request): Promise<Response> {
 
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://markify.ai';
 
-    const portalSession = await stripe.billingPortal.sessions.create({
+    const portalSession = await getStripe().billingPortal.sessions.create({
       customer: customerId,
       return_url: `${baseUrl}/dashboard/billing`,
     });

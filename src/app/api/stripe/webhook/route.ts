@@ -1,10 +1,12 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-03-31.basil',
-});
+function getStripe() {
+  return new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    apiVersion: '2025-03-31.basil',
+  });
+}
 
-const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET!;
+const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || '';
 
 // In-memory tenant plan store (simulated DB update)
 const tenantPlans = new Map<string, { plan: string; stripe_customer_id: string; stripe_subscription_id: string }>();
@@ -25,7 +27,7 @@ export async function POST(request: Request): Promise<Response> {
       return Response.json({ error: 'Missing stripe-signature header.' }, { status: 400 });
     }
 
-    event = stripe.webhooks.constructEvent(body, signature, WEBHOOK_SECRET);
+    event = getStripe().webhooks.constructEvent(body, signature, WEBHOOK_SECRET);
   } catch (err) {
     console.error('[stripe/webhook] Signature verification failed:', err);
     return Response.json({ error: 'Webhook signature verification failed.' }, { status: 400 });
