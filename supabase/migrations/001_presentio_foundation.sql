@@ -72,7 +72,7 @@ create trigger on_auth_user_created
 -- ============================================================
 
 create table presentations (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   user_id uuid not null references profiles(id) on delete cascade,
   title text not null,
   slug text unique,
@@ -115,7 +115,7 @@ create index idx_presentations_status on presentations(status);
 -- ============================================================
 
 create table sections (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   presentation_id uuid not null references presentations(id) on delete cascade,
   "order" integer not null default 0,
   section_type section_type not null,
@@ -161,7 +161,7 @@ create index idx_sections_order on sections(presentation_id, "order");
 -- ============================================================
 
 create table presentation_views (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   presentation_id uuid not null references presentations(id) on delete cascade,
   viewer_ip text,
   user_agent text,
