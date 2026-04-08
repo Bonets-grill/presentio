@@ -191,7 +191,7 @@ export default function HomePage() {
             {[
               { value: "30+", label: "voces disponibles" },
               { value: "6", label: "idiomas" },
-              { value: "$1.50", label: "por presentación" },
+              { value: "100%", label: "personalizable" },
               { value: "5 min", label: "setup" },
             ].map((s, i) => (
               <div key={i} className="text-center">
