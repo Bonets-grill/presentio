@@ -6,11 +6,10 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAppStore } from '@/stores/app-store'
 import { T } from '@/lib/i18n/translations'
-import { isDemoLogin, DEMO_PROFILE, DEMO_TENANT, setDemoMode } from '@/lib/demo/auth'
 
 export default function LoginPage() {
   const router = useRouter()
-  const { lang, setUser, setTenant } = useAppStore()
+  const { lang } = useAppStore()
   const t = T[lang]
 
   const [email, setEmail] = useState('')
@@ -23,15 +22,6 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
 
-    // Demo mode — bypass Supabase
-    if (isDemoLogin(email, password)) {
-      setDemoMode(true)
-      setUser(DEMO_PROFILE)
-      setTenant(DEMO_TENANT)
-      router.push('/dashboard')
-      return
-    }
-
     try {
       const supabase = createClient()
       const { error: err } = await supabase.auth.signInWithPassword({ email, password })
@@ -42,7 +32,6 @@ export default function LoginPage() {
         return
       }
 
-      setDemoMode(false)
       router.push('/dashboard')
     } catch {
       setError(t.invalidCredentials)
@@ -97,23 +86,6 @@ export default function LoginPage() {
           {t.register}
         </Link>
       </p>
-
-      {/* Demo credentials */}
-      <div className="mt-6 border-t border-border pt-5">
-        <button
-          type="button"
-          onClick={() => {
-            setEmail('demo@markify.eu')
-            setPassword('demo2026')
-          }}
-          className="w-full text-center text-sm text-muted-foreground hover:text-foreground transition border border-dashed border-border rounded-lg py-2.5 hover:border-primary/50"
-        >
-          Use demo credentials
-        </button>
-        <p className="text-xs text-muted-foreground text-center mt-2">
-          demo@markify.eu / demo2026
-        </p>
-      </div>
     </div>
   )
 }

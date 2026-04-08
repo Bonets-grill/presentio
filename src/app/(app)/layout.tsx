@@ -6,25 +6,14 @@ import { Sidebar } from '@/components/layout/sidebar'
 import { Header } from '@/components/layout/header'
 import { useAppStore } from '@/stores/app-store'
 import { createClient } from '@/lib/supabase/client'
-import { isDemoMode, DEMO_PROFILE, DEMO_TENANT } from '@/lib/demo/auth'
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter()
-  const { setUser, setTenant, user, sidebarOpen } = useAppStore()
+  const { setUser, user, sidebarOpen } = useAppStore()
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
     const load = async () => {
-      // Demo mode — use hardcoded profile/tenant
-      if (isDemoMode()) {
-        if (!user) {
-          setUser(DEMO_PROFILE)
-          setTenant(DEMO_TENANT)
-        }
-        setReady(true)
-        return
-      }
-
       try {
         const supabase = createClient()
         const { data: { user: authUser } } = await supabase.auth.getUser()
@@ -43,15 +32,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
         if (profile) {
           setUser(profile)
-
-          // Fetch tenant
-          const { data: tenant } = await supabase
-            .from('tenants')
-            .select('*')
-            .eq('id', profile.tenant_id)
-            .single()
-
-          if (tenant) setTenant(tenant)
         }
 
         setReady(true)
@@ -61,7 +41,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     }
 
     load()
-  }, [router, setUser, setTenant, user])
+  }, [router, setUser, user])
 
   if (!ready) {
     return (

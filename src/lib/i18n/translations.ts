@@ -150,7 +150,7 @@ interface Translations {
 
 export const T: Record<Lang, Translations> = {
   en: {
-    appName: 'Markify',
+    appName: 'Presentio',
     tagline: 'Watermark. Label. Comply.',
     loading: 'Loading...',
     save: 'Save',
@@ -204,7 +204,7 @@ export const T: Record<Lang, Translations> = {
 
     welcomeBack: 'Welcome back',
     quickStart: 'Quick Start Guide',
-    quickStartDesc: 'Get started with Markify in 3 simple steps',
+    quickStartDesc: 'Get started with Presentio in 3 simple steps',
     totalItems: 'Total Items',
     itemsThisMonth: 'Items This Month',
     apiCalls: 'API Calls',
@@ -280,7 +280,7 @@ export const T: Record<Lang, Translations> = {
   },
 
   es: {
-    appName: 'Markify',
+    appName: 'Presentio',
     tagline: 'Marca. Etiqueta. Cumple.',
     loading: 'Cargando...',
     save: 'Guardar',
@@ -334,7 +334,7 @@ export const T: Record<Lang, Translations> = {
 
     welcomeBack: 'Bienvenido de nuevo',
     quickStart: 'Guía de Inicio Rápido',
-    quickStartDesc: 'Empieza con Markify en 3 simples pasos',
+    quickStartDesc: 'Empieza con Presentio en 3 simples pasos',
     totalItems: 'Total de Ítems',
     itemsThisMonth: 'Ítems Este Mes',
     apiCalls: 'Llamadas API',
@@ -410,7 +410,7 @@ export const T: Record<Lang, Translations> = {
   },
 
   fr: {
-    appName: 'Markify',
+    appName: 'Presentio',
     tagline: 'Marquer. Étiqueter. Conformer.',
     loading: 'Chargement...',
     save: 'Enregistrer',
@@ -464,7 +464,7 @@ export const T: Record<Lang, Translations> = {
 
     welcomeBack: 'Bienvenue',
     quickStart: 'Guide de Démarrage Rapide',
-    quickStartDesc: 'Démarrez avec Markify en 3 étapes simples',
+    quickStartDesc: 'Démarrez avec Presentio en 3 étapes simples',
     totalItems: 'Total des Éléments',
     itemsThisMonth: 'Éléments ce Mois',
     apiCalls: 'Appels API',
@@ -540,7 +540,7 @@ export const T: Record<Lang, Translations> = {
   },
 
   de: {
-    appName: 'Markify',
+    appName: 'Presentio',
     tagline: 'Markieren. Kennzeichnen. Konform.',
     loading: 'Laden...',
     save: 'Speichern',
@@ -594,7 +594,7 @@ export const T: Record<Lang, Translations> = {
 
     welcomeBack: 'Willkommen zurück',
     quickStart: 'Schnellstart-Anleitung',
-    quickStartDesc: 'Starten Sie mit Markify in 3 einfachen Schritten',
+    quickStartDesc: 'Starten Sie mit Presentio in 3 einfachen Schritten',
     totalItems: 'Gesamtelemente',
     itemsThisMonth: 'Elemente diesen Monat',
     apiCalls: 'API-Aufrufe',
@@ -670,7 +670,7 @@ export const T: Record<Lang, Translations> = {
   },
 
   it: {
-    appName: 'Markify',
+    appName: 'Presentio',
     tagline: 'Filigrana. Etichetta. Conformità.',
     loading: 'Caricamento...',
     save: 'Salva',
@@ -724,7 +724,7 @@ export const T: Record<Lang, Translations> = {
 
     welcomeBack: 'Bentornato',
     quickStart: 'Guida Rapida',
-    quickStartDesc: 'Inizia con Markify in 3 semplici passaggi',
+    quickStartDesc: 'Inizia con Presentio in 3 semplici passaggi',
     totalItems: 'Totale Elementi',
     itemsThisMonth: 'Elementi Questo Mese',
     apiCalls: 'Chiamate API',

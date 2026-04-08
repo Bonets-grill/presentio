@@ -9,7 +9,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
               <path d="M4 7V4h16v3M4 17v3h16v-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary-foreground" />
             </svg>
           </div>
-          <span className="text-2xl font-bold text-foreground">Markify</span>
+          <span className="text-2xl font-bold text-foreground">Presentio</span>
         </div>
         {children}
       </div>

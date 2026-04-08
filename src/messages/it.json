@@ -1,0 +1,112 @@
+{
+  "common": {
+    "appName": "Presentio",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "publish": "Publish",
+    "back": "Back",
+    "next": "Next",
+    "preview": "Preview",
+    "share": "Share",
+    "download": "Download",
+    "search": "Search",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "presentations": "Presentations",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "billing": "Billing"
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full name",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "verifyEmail": "Verify your email",
+    "verifyDesc": "We've sent a verification link to your email."
+  },
+  "dashboard": {
+    "title": "My Presentations",
+    "subtitle": "Create and manage your AI-powered presentations.",
+    "empty": "No presentations yet. Create your first one!",
+    "createNew": "New Presentation",
+    "views": "views",
+    "draft": "Draft",
+    "published": "Published",
+    "generating": "Generating...",
+    "ready": "Ready"
+  },
+  "editor": {
+    "title": "Presentation Editor",
+    "companyName": "Company name",
+    "companyDesc": "What does the company do?",
+    "targetAudience": "Target audience",
+    "sellingPoints": "Key selling points",
+    "sellingPointsHint": "One per line",
+    "pricingInfo": "Pricing information",
+    "additionalContext": "Additional context",
+    "language": "Presentation language",
+    "generateContent": "Generate with AI",
+    "generateVoice": "Generate voice",
+    "regenerate": "Regenerate",
+    "sections": "Sections",
+    "addSection": "Add section",
+    "voiceScript": "Voice script",
+    "preview": "Preview",
+    "publishPresentation": "Publish",
+    "theme": "Visual theme",
+    "voice": "Voice",
+    "chooseVoice": "Choose a voice"
+  },
+  "viewer": {
+    "startPresentation": "Voice-Guided Presentation",
+    "manualExplore": "Explore Manually",
+    "stop": "Stop",
+    "poweredBy": "Made with Presentio"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "totalViews": "Total views",
+    "avgTime": "Avg. time",
+    "completionRate": "Completion rate",
+    "voiceStarts": "Voice plays",
+    "last7days": "Last 7 days",
+    "last30days": "Last 30 days"
+  },
+  "billing": {
+    "title": "Billing",
+    "currentPlan": "Current plan",
+    "free": "Free",
+    "pro": "Pro",
+    "team": "Team",
+    "upgrade": "Upgrade",
+    "manage": "Manage subscription",
+    "presentations": "presentations/month",
+    "voiceMinutes": "voice minutes/month",
+    "unlimited": "Unlimited"
+  },
+  "landing": {
+    "hero": "Interactive presentations with AI voice",
+    "heroSub": "Create presentations that speak for you. AI-generated content, natural voice narration, perfect sync.",
+    "cta": "Start for free",
+    "feature1": "AI generates your content",
+    "feature1Desc": "Describe your product and AI creates a complete presentation with data, charts, and narration.",
+    "feature2": "Synced natural voice",
+    "feature2Desc": "Human-like voice narration that guides the viewer section by section.",
+    "feature3": "Share with a link",
+    "feature3Desc": "Publish and share your presentation with a unique link. Analytics included.",
+    "feature4": "Multilanguage",
+    "feature4Desc": "Generate presentations in Spanish, English, French, German, Portuguese, and Italian."
+  }
+}

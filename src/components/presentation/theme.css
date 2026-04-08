@@ -1,0 +1,14 @@
+.presentation-theme {
+  --primary: #1a5c38;
+  --primary-light: #2d8a56;
+  --accent: #d4a843;
+  --bg: #0a0f0d;
+  --bg-card: #111a15;
+  --text: #e8ede9;
+  --text-muted: #8a9b8f;
+  --border: #1e2e24;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+}

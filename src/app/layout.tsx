@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Markify — AI Content Watermarking & Compliance',
-  description: 'Watermark, label, and certify AI-generated content. Comply with the EU AI Act.',
+  title: 'Presentio — AI-Powered Interactive Presentations',
+  description: 'Create AI-powered interactive presentations with voice narration.',
 }
 
 export default function RootLayout({

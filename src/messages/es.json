@@ -1,0 +1,112 @@
+{
+  "common": {
+    "appName": "Presentio",
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "publish": "Publicar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "preview": "Vista previa",
+    "share": "Compartir",
+    "download": "Descargar",
+    "search": "Buscar",
+    "settings": "Ajustes",
+    "logout": "Cerrar sesión"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "presentations": "Presentaciones",
+    "analytics": "Analíticas",
+    "settings": "Ajustes",
+    "billing": "Facturación"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Crear cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "fullName": "Nombre completo",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "verifyEmail": "Verifica tu correo",
+    "verifyDesc": "Hemos enviado un enlace de verificación a tu correo."
+  },
+  "dashboard": {
+    "title": "Mis Presentaciones",
+    "subtitle": "Crea y gestiona tus presentaciones con IA.",
+    "empty": "Aún no tienes presentaciones. ¡Crea tu primera!",
+    "createNew": "Nueva Presentación",
+    "views": "visitas",
+    "draft": "Borrador",
+    "published": "Publicada",
+    "generating": "Generando...",
+    "ready": "Lista"
+  },
+  "editor": {
+    "title": "Editor de Presentación",
+    "companyName": "Nombre de la empresa",
+    "companyDesc": "¿Qué hace la empresa?",
+    "targetAudience": "¿A quién va dirigida?",
+    "sellingPoints": "Puntos clave de venta",
+    "sellingPointsHint": "Uno por línea",
+    "pricingInfo": "Información de precios",
+    "additionalContext": "Contexto adicional",
+    "language": "Idioma de la presentación",
+    "generateContent": "Generar con IA",
+    "generateVoice": "Generar voz",
+    "regenerate": "Regenerar",
+    "sections": "Secciones",
+    "addSection": "Añadir sección",
+    "voiceScript": "Guión de voz",
+    "preview": "Vista previa",
+    "publishPresentation": "Publicar",
+    "theme": "Tema visual",
+    "voice": "Voz",
+    "chooseVoice": "Elige una voz"
+  },
+  "viewer": {
+    "startPresentation": "Presentación Guiada con Voz",
+    "manualExplore": "Explorar Manualmente",
+    "stop": "Detener",
+    "poweredBy": "Creado con Presentio"
+  },
+  "analytics": {
+    "title": "Analíticas",
+    "totalViews": "Visitas totales",
+    "avgTime": "Tiempo medio",
+    "completionRate": "Tasa de completado",
+    "voiceStarts": "Reproducciones de voz",
+    "last7days": "Últimos 7 días",
+    "last30days": "Últimos 30 días"
+  },
+  "billing": {
+    "title": "Facturación",
+    "currentPlan": "Plan actual",
+    "free": "Gratis",
+    "pro": "Pro",
+    "team": "Team",
+    "upgrade": "Mejorar plan",
+    "manage": "Gestionar suscripción",
+    "presentations": "presentaciones/mes",
+    "voiceMinutes": "minutos de voz/mes",
+    "unlimited": "Ilimitadas"
+  },
+  "landing": {
+    "hero": "Presentaciones interactivas con voz IA",
+    "heroSub": "Crea presentaciones que hablan por ti. Contenido generado por IA, narración con voz natural, sincronización perfecta.",
+    "cta": "Empieza gratis",
+    "feature1": "IA genera tu contenido",
+    "feature1Desc": "Describe tu producto y la IA crea una presentación completa con datos, gráficas y narración.",
+    "feature2": "Voz natural sincronizada",
+    "feature2Desc": "Narración con voz humana que guía al espectador sección por sección.",
+    "feature3": "Comparte con un link",
+    "feature3Desc": "Publica y comparte tu presentación con un enlace único. Analytics incluidas.",
+    "feature4": "Multilenguaje",
+    "feature4Desc": "Genera presentaciones en español, inglés, francés, alemán, portugués e italiano."
+  }
+}
