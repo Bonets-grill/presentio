@@ -124,11 +124,11 @@ export default function HomePage() {
             <a href="#pricing" className="hover:text-white transition-colors">Precios</a>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/auth/login" className="hidden sm:inline-block text-sm hover:text-white transition-colors" style={{ color: C.muted }}>
+            <a href="/login" className="hidden sm:inline-block text-sm hover:text-white transition-colors" style={{ color: C.muted }}>
               Iniciar sesión
             </a>
             <a
-              href="/auth/register"
+              href="/register"
               className="text-sm font-medium px-4 py-2 rounded-lg transition-all hover:brightness-110"
               style={{ background: C.green, color: C.white }}
             >
@@ -170,7 +170,7 @@ export default function HomePage() {
           {/* CTAs */}
           <div className="animate-fade-in-up stagger-2 flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <a
-              href="/auth/register"
+              href="/register"
               className="group px-8 py-3.5 rounded-xl text-base font-semibold transition-all hover:brightness-110 animate-pulse-glow"
               style={{ background: C.green, color: C.white }}
             >
@@ -520,7 +520,7 @@ export default function HomePage() {
                 </ul>
 
                 <a
-                  href="/auth/register"
+                  href="/register"
                   className="block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all hover:brightness-110"
                   style={{
                     background: plan.popular ? C.green : "transparent",
@@ -617,7 +617,7 @@ export default function HomePage() {
               Crea una presentación profesional con voz IA en menos de 5 minutos.
             </p>
             <a
-              href="/auth/register"
+              href="/register"
               className="inline-flex items-center gap-2 px-10 py-4 rounded-xl text-lg font-bold transition-all hover:brightness-110 animate-pulse-glow"
               style={{ background: C.green, color: C.white }}
             >
