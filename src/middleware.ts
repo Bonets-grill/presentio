@@ -9,8 +9,8 @@ const intlMiddleware = createIntlMiddleware(routing)
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Skip i18n for API routes and public viewer routes
-  if (pathname.startsWith('/api') || pathname.startsWith('/p/')) {
+  // Skip i18n for API routes, public viewer routes, and landing page
+  if (pathname.startsWith('/api') || pathname.startsWith('/p/') || pathname === '/') {
     return await updateSession(request)
   }
 
